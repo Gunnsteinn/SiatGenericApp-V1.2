@@ -1,0 +1,34 @@
+<ion-view title="Menú" hide-back-button="true" id="page6" style="background-color:#FFFFFF;">
+  <ion-nav-buttons side="left" scroll="false" class="has-header">
+    <button class="button button-icon icon ion-android-exit" ng-click="logOut()" ui-sref="inicio"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right" scroll="false" class="has-header">
+    <button class="button button-icon icon ion-android-chat"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" scroll="false" class="has-header">
+    <div class="spacer" style="width: 300px; height: 30px;"></div>
+    <form id="men-form5" class="list">
+      <ion-item class="range range-positive" id="men-range2">
+        <input type="range" value="0" min="0" max="100" step="1" name="dosis-timer">
+      </ion-item>
+    </form>
+    <div id="men-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Próxima Dosis
+        <strong>10/10 13:00</strong>
+      </p>
+    </div>
+    <button id="men-button17" class="button button-positive  button-block">Tomar Dosis</button>
+    <button id="men-button24" class="button button-assertive  button-block button-clear">Cancelar Dosis</button>
+    <div class="spacer" style="width: 300px; height: 34px;"></div>
+    <ion-list id="men-list3">
+      <ion-item class="item-divider" id="men-list-item-divider2"> Especialista</ion-item>
+      <ion-item class="item-avatar item-icon-right" id="men-list-item5">
+        <img src="img/John-C.-McGinley.jpg">
+        <h2>Dr Carlos Wea</h2>
+        <p>Próximo Turno 10/10/2016 13:00</p>
+        <i class="icon ion-android-calendar"></i>
+      </ion-item>
+    </ion-list>
+    <a ui-sref="mensajes" id="men-button25" style="text-align:left;" class="button button-positive  button-block icon-right ion-android-call"> Llamar a Especialista</a>
+  </ion-content>
+</ion-view>

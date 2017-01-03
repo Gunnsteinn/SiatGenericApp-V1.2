@@ -1,0 +1,21 @@
+<ion-view title="Login Paciente" id="page4">
+  <ion-content padding="true" class="has-header">
+    <form id="loginPaciente-form1" class="list">
+      <div class="spacer" style="width: 300px; height: 142px;"></div>
+      <ion-list id="loginPaciente-list1">
+        <label class="item item-input" id="loginPaciente-input1">
+          <span class="input-label">Usuario</span>
+          <input type="text" placeholder="" ng-model="data.usernamePatient">
+        </label>
+        <label class="item item-input" id="loginPaciente-input2">
+          <span class="input-label">Contraseña</span>
+          <input type="password" placeholder="" ng-model="data.passwordPatient">
+        </label>
+          <span ng-show="errorLoginPatient">Contraseña</span>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <a ng-click="loginPatient()" id="loginPaciente-button12" class="button button-stable  button-block">Ingresar</a>
+    </form>
+  </ion-content>
+</ion-view>
+<a href="loginEspecialista.html">loginEspecialista.html</a>
