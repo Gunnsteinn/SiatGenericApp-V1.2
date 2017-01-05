@@ -24,8 +24,17 @@ angular.module('app.services', [])
         getUsersRef: function () {
             return JSON.parse($window.localStorage['usersRef'] || '{}');
         },
+        setPatientData: function (patientData) {
+            $window.localStorage['patientData'] = JSON.stringify(patientData);
+        },
+        getPatientData: function () {
+            return JSON.parse($window.localStorage['patientData'] || '{}');
+        },
         remove: function () {
             $window.localStorage.removeItem('logUser');
+            $window.localStorage.removeItem('usersRef');
+            $window.localStorage.removeItem('idUsuario');
+            $window.localStorage.removeItem('patientData');
         }
     }
 }])
@@ -62,8 +71,8 @@ angular.module('app.services', [])
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                     })
                     .success(function (data) {
-                        console.log('data: ' + data[0]);
-                        return data[0];
+                        console.log('data: ' + data);
+                        return data;
                     });
         }
     }

@@ -34,16 +34,10 @@ angular.module('app.routes', [])
     controller: 'loginEspecialistaCtrl'
   })
 
-  .state('men', {
-    url: '/paciente-menu',
-    templateUrl: 'templates/men.html',
-    controller: 'menCtrl'
-  })
-
-  .state('mensajesEspecialista', {
-    url: '/mensajesEspecialista',
-    templateUrl: 'templates/mensajesEspecialista.html',
-    controller: 'mensajesEspecialistaCtrl'
+  .state('mensajes', {
+      url: '/mensajes',
+      templateUrl: 'templates/mensajes.html',
+      controller: 'mensajes'
   })
 
   .state('pacientes', {
@@ -58,6 +52,11 @@ angular.module('app.routes', [])
     controller: 'turnosCtrl'
   })
 
+.state('pacienteMenu', {
+    url: '/paciente-menu',
+    templateUrl: 'templates/pacienteMenu.html',
+    controller: 'pacienteMenuCtrl'
+})
 $urlRouterProvider.otherwise('/inicio')
 
   

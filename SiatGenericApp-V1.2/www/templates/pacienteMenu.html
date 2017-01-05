@@ -3,18 +3,21 @@
     <button class="button button-icon icon ion-android-exit" ng-click="logOut()" ui-sref="inicio"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right" scroll="false" class="has-header">
-    <button class="button button-icon icon ion-android-chat"></button>
+    <button class="button button-icon icon ion-android-chat" ng-click="chatInfo()" ui-sref="mensajes"></button>
   </ion-nav-buttons>
-  <ion-content padding="true" scroll="false" class="has-header">
+  <ion-content ng-show="loading" class="has-header">
+    <ion-spinner icon="lines" class="spinner-calm"></ion-spinner>
+  </ion-content>
+  <ion-content ng-show="!loading" padding="true" scroll="false" class="has-header">
     <div class="spacer" style="width: 300px; height: 30px;"></div>
     <form id="men-form5" class="list">
       <ion-item class="range range-positive" id="men-range2">
-        <input type="range" value="0" min="0" max="100" step="1" name="dosis-timer">
+        <input type="range" value={{patientInfo.percentTodosis}} min="0" max="100" step="1" name="dosis-timer">
       </ion-item>
     </form>
     <div id="men-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">Próxima Dosis
-        <strong>10/10 13:00</strong>
+      <p style="color:#000000;">Próxima Dosis:
+        <strong>{{patientInfo.patturn}}</strong>
       </p>
     </div>
     <button id="men-button17" class="button button-positive  button-block">Tomar Dosis</button>
@@ -23,12 +26,12 @@
     <ion-list id="men-list3">
       <ion-item class="item-divider" id="men-list-item-divider2"> Especialista</ion-item>
       <ion-item class="item-avatar item-icon-right" id="men-list-item5">
-        <img src="img/John-C.-McGinley.jpg">
-        <h2>Dr Carlos Wea</h2>
-        <p>Próximo Turno 10/10/2016 13:00</p>
+        <img src={{patientInfo.espPhoto}}>
+        <h2>Dr  {{patientInfo.espName}} {{patientInfo.espLastName}}</h2>
+        <p>Próx. Turno: {{patientInfo.espturn}}</p>
         <i class="icon ion-android-calendar"></i>
       </ion-item>
     </ion-list>
-    <a ui-sref="mensajes" id="men-button25" style="text-align:left;" class="button button-positive  button-block icon-right ion-android-call"> Llamar a Especialista</a>
+    <a href={{patientInfo.espTel}} id="men-button25" style="text-align:left;" class="button button-positive  button-block icon-right ion-android-call"> Llamar a Especialista</a>
   </ion-content>
 </ion-view>
